@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Моя страница
+{% endblock %}
+{% block content %}
+    <div class="mt-3">
+        <div class="mb-4 d-flex align-items-center justify-content-start">
+            <div class="d-inline-block">
+                <h5 class="d-inline ml-4">{{ account.username }}</h5>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h6>Публикации пользователя</h6>
+    <hr>
+    {% for photo in photos %}
+<div class="card-body">
+                <img class="image" src="{{ photo.image.url }}">
+                <p class="card-text">Подпись: {{ photo.inscription }}</p>
+                <a href="{% url 'photo_detail' photo.pk %}">Подробнее...</a>
+                <p class="card-text">{{ photo.created_at }}</p>
+            </div>
+    {% endfor %}
+
+    <hr>
+{% endblock %}
