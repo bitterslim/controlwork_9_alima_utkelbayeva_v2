@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% load static %}
+
+{% block title %}
+    Изображение
+{% endblock %}
+
+{% block content %}
+        <div class="card mt-3">
+            <div class="card-body">
+                <img class="image" src="{{ photos.image.url }}">
+                <p class="card-text">Подпись: {{ photos.inscription }}</p>
+                <p class="card-text">{{ photos.created_at }}</p>
+                    <a href="{% url 'photo_update' photos.pk %}">
+                {% if request.user.pk == photos.author.pk %}
+        <a href="{% url 'photo_update' photos.pk %}">
+            <button type="button" class="btn btn-primary btn-sm">Редактировать изображение</button>
+        </a>
+        <a href="{% url 'photo_delete' photos.pk %}">
+            <button type="button" class="btn btn-primary btn-sm">Удалить изображение</button>
+        </a>
+    {% endif %}
+            </div>
+        </div>
+{% endblock %}

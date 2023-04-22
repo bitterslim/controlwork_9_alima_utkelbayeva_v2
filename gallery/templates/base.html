@@ -1,0 +1,71 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block title %}Gallery{% endblock %}</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="{% url 'list_view' %}">
+            <img class="logo" src="{% static 'img/logo.svg' %}"
+                 alt="logo">
+        </a>
+            <a class="navbar-brand" href="{% url 'list_view' %}">
+                <h6 class = "navbar-name" >Gallery</h6>
+        </a>
+        <div class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav align-items-center">
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a href="{% url 'profile' user.pk %}" class="nav-link account-logo">
+                            Моя страница
+                        </a>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <a href="{% url 'logout' %}" class="nav-link log-out">
+                            Выход
+                        </a>
+                    </li>
+                    <li class="nav-item ml-2">
+                        <a href="{% url 'photo_create' %}" class="nav-link log-out">
+                            Добавить изображение
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a href="{% url 'login' %}" class="base-login">
+                            Войти
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'register' %}" class="base-login">
+                            Зарегистрироваться
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+</body>
+</html>
