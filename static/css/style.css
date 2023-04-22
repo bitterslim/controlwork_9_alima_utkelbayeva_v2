@@ -1,0 +1,111 @@
+.form-log {
+    width: 480px;
+    height: 250px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.1);
+}
+.form-register {
+    width: 600px;
+    height: 550px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.1);
+    background-color: #b4c4ff;
+}
+.account-logo{
+    color: #ffffff;
+}
+
+.form-control {
+    width: 290px;
+    height: 40px;
+}
+
+.form {
+    float: left;
+}
+
+.login-btn {
+    color: #ffffff;
+    background-color: #020c42;
+    border: 0;
+    border-radius: 5px;
+    width: 60px;
+    height: 38px;
+    font-size: 15px;
+    clear: both;
+}
+
+.navbar {
+    background-color: #1685e5 ;
+    height: 80px;
+    padding: 0 0;
+}
+
+.head-line {
+    height: 40px;
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+}
+.navbar-name{
+    text-decoration: none;
+    color: white;
+
+}
+.image {
+    width: 900px;
+    height: 500px;
+}
+.author{
+    text-decoration: none;
+    color: #5d5757;
+    padding-top: 20px;
+    padding-left: 30px;
+}
+.login-img {
+    background-image: url(../img/login-img.png);
+    width: 120px;
+    height: 120px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    float:right;
+}
+
+.base-login {
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+    border: 1px solid #113cc5;
+    padding: 10px 12px;
+    border-radius: 25px;
+    background-color: #113cc5 !important;
+}
+
+.base-login:hover {
+    text-decoration: none;
+    border: 1px solid white;
+    color: white;
+}
+
+
+
+.log-out {
+    color: white;
+}
+
+.log-out:hover {
+    color: #ffffff;
+}
+
+.reg-btn {
+    color: white;
+    background-color: #031759;
+    border: 0;
+    border-radius: 5px;
+    width: 200px;
+    height: 38px;
+    font-size: 15px;
+    clear: both;
+}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+{% block content %}
+    {% for photo in photos %}
+        <div class="card mt-3">
+            <a class = "author" href="{% url 'profile' photo.author.pk %}">Автор:{{ photo.author }}</a>
+            <div class="card-body">
+                <img class="image" src="{{ photo.image.url }}">
+                <p class="card-text">Подпись: {{ photo.inscription }}</p>
+                <p class="card-text">{{ photo.created_at }}</p>
+                <a href="{% url 'photo_detail' photo.pk %}">
+            <button type="button" class="btn btn-primary btn-sm">Подробнее</button>
+        </a>
+            </div>
+        </div>
+    {% endfor %}
+    <div class="pagin">
+        {% if is_paginated %}
+            {% include 'partial/pagination.html' %}
+        {% endif %}
+    </div>
+{% endblock %}
